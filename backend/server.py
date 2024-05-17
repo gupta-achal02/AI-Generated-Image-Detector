@@ -17,9 +17,9 @@ model = load_model("./model/MobileNet_model.h5")
 # Define class names
 class_names = ['AI-generated', 'Real']
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def home():
-    return {"message": "Hello from backend"}
+    return("Hello")
 
 @app.route("/upload", methods=['POST'])
 def upload():
@@ -39,4 +39,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
